@@ -69,6 +69,31 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           </li>
         )
       }
+      <li class="relative group">
+        <button class="text-gray-700 hover:text-black transition-colors font-medium flex items-center gap-1 cursor-pointer">
+          Download CV
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        
+        <div class="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
+          <a 
+            href="/portfolio/Julien_MERAND_CV_English.pdf" 
+            target="_blank"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+          >
+            English
+          </a>
+          <a 
+            href="/portfolio/Julien_MERAND_CV_Francais.pdf" 
+            target="_blank"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+          >
+            Français
+          </a>
+        </div>
+      </li>
     </ul>
   </nav>
 </header>
@@ -77,9 +102,9 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
     if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+      header?.classList.add("bg-white/80", "backdrop-blur-sm", "shadow-sm");
     } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+      header?.classList.remove("bg-white/80", "backdrop-blur-sm", "shadow-sm");
     }
   });
 </script>
