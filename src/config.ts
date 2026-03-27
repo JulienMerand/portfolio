@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Julien Mérand",
   title: "PhD Student in Robotics & AI @ CEA-List",
-  description: "Portfolio website of Julien Mérand",
+  description: "Julien Mérand - Portfolio website of a PhD student in Robotics Grasping, Manipulation and AI at CEA-List and Paris-Saclay University.",
   accentColor: "#1d4ed8",
   social: {
     email: "julien.merand@cea.fr",
