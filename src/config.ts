@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Julien Mérand",
-  title: "PhD Student in Robotics & AI",
+  title: "PhD Student in Robotics & AI @ CEA-List",
   description: "Portfolio website of Julien Mérand",
   accentColor: "#1d4ed8",
   social: {
