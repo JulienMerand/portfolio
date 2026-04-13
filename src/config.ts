@@ -42,7 +42,7 @@ export const siteConfig = {
       dateRange: "May 2024 - Oct 2024",
       image: "/portfolio/logo_cea.jpg",
       bullets: [
-        "Used vision and AI tools to recognize and locate everyday objects for for grasping and manipulation tasks.",
+        "Used vision and AI tools to recognize and locate everyday objects for grasping and manipulation tasks.",
         "Integrated a two-armed exoskeleton with an eye-tracking device to provide active robotic assistance.",
       ],
     },
