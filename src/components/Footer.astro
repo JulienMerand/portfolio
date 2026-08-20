@@ -7,199 +7,96 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
 
-<footer class="relative bg-gray-50 border-t border-gray-200">
-  <div class="mx-auto max-w-6xl px-6 py-12 lg:px-8">
-    <div
-      class="flex flex-col md:flex-row md:items-center md:justify-between gap-8"
-    >
-      <div class="flex flex-col gap-4">
-        <h3 class="text-2xl font-bold text-gray-800">
-          {siteConfig.name}
-        </h3>
-        <p class="text-base text-gray-600">
-          {siteConfig.title}
-        </p>
-        <div class="flex gap-x-6">
-          <a
-            href={`mailto:${siteConfig.social.email}`}
-            aria-label="Email"
-            class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-            style={`--accent-color: ${siteConfig.accentColor}`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6"
+<footer class="relative mt-24 border-t border-slate-200/80 bg-slate-50/60" style={`--accent: ${siteConfig.accentColor}`}>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Call To Action Card -->
+    <div class="glass-card rounded-3xl p-8 sm:p-12 mb-16 shadow-sm border border-slate-200/80 relative overflow-hidden">
+      <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[var(--accent)]/10 blur-3xl -z-10"></div>
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="space-y-2 max-w-xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">
+            Let's Connect
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">
+            Interested in collaborating or discussing research?
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Feel free to reach out for academic collaborations, research discussions in robotics & AI, or inquiries.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          {siteConfig.social?.email && (
+            <a
+              href={`mailto:${siteConfig.social.email}`}
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[var(--accent)] hover:brightness-110 shadow-sm hover:shadow-md transition-all"
             >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-              ></path>
-              <path d="M3 7l9 6l9 -6"></path>
-            </svg>
-          </a>
-          <a
-            href={siteConfig.social.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-            style={`--accent-color: ${siteConfig.accentColor}`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"
-              ></path><path d="M16 16v-3a2 2 0 1 0 -4 0"></path><path
-                d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"
-              ></path></svg
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                <path d="M3 7l9 6l9 -6" />
+              </svg>
+              <span>Send an Email</span>
+            </a>
+          )}
+          {siteConfig.social?.linkedin && (
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-2xs transition-all"
             >
-          </a>
-          <!-- <a
-            href={siteConfig.social.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-            style={`--accent-color: ${siteConfig.accentColor}`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path
-                d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg
-            >
-          </a> -->
-          <a
-            href={siteConfig.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-            style={`--accent-color: ${siteConfig.accentColor}`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-              ></path></svg
-            >
-          </a>
+              <span>LinkedIn Profile</span>
+            </a>
+          )}
         </div>
       </div>
+    </div>
 
-      <div class="hidden md:block flex flex-col md:items-end gap-4">
-        <nav class="flex gap-x-8">
-          <a
-            href="#about"
-            class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-            >About</a
+    <!-- Footer Main Columns -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pt-6 border-t border-slate-200/80">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2.5">
+          <span
+            class="w-6 h-6 rounded-full text-white text-[10px] font-bold flex items-center justify-center"
+            style={`background-color: ${siteConfig.accentColor}`}
           >
-          {
-            hasExperience && (
-              <a
-                href="#experience"
-                class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Experience
-              </a>
-            )
-          }
-          {
-            hasEducation && (
-              <a
-                href="#education"
-                class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Education
-              </a>
-            )
-          }
-          {
-            hasPapers && (
-              <a
-                href="#papers"
-                class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Papers
-              </a>
-            )
-          }
-          {
-            hasProjects && (
-              <a
-                href="#projects"
-                class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Projects
-              </a>
-            )
-          }
-        </nav>
-        <p class="text-sm text-gray-500">
-          © {new Date().getFullYear()}
-          {siteConfig.name}. All rights reserved.
+            JM
+          </span>
+          <h4 class="text-base font-bold text-slate-900">
+            {siteConfig.name}
+          </h4>
+        </div>
+        <p class="text-xs text-slate-500 max-w-sm">
+          {siteConfig.title}
         </p>
       </div>
+
+      <!-- Navigation Links & Back to Top -->
+      <div class="flex flex-wrap items-center gap-6 text-xs font-medium text-slate-600">
+        <a href="#about" class="hover:text-[var(--accent)] transition-colors">About</a>
+        {hasPapers && <a href="#papers" class="hover:text-[var(--accent)] transition-colors">Papers</a>}
+        {hasExperience && <a href="#experience" class="hover:text-[var(--accent)] transition-colors">Experience</a>}
+        {hasEducation && <a href="#education" class="hover:text-[var(--accent)] transition-colors">Education</a>}
+        {hasProjects && <a href="#projects" class="hover:text-[var(--accent)] transition-colors">Projects</a>}
+        
+        <button
+          onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all cursor-pointer"
+        >
+          <span>Top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="pt-8 mt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+      <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+      <p>Built with Astro & Tailwind CSS</p>
     </div>
   </div>
-
-  <!-- Decorative pattern -->
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <svg
-      aria-hidden="true"
-      class="absolute bottom-0 left-0 w-full h-24 text-gray-100"
-    >
-      <pattern
-        id="footer-pattern"
-        x="0"
-        y="0"
-        width="100"
-        height="100"
-        patternUnits="userSpaceOnUse"
-      >
-        <path
-          d="M0 50 Q 25 40, 50 50 T 100 50"
-          stroke="currentColor"
-          stroke-width="0.5"
-          fill="none"
-          opacity="0.4"></path>
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#footer-pattern)"></rect>
-    </svg>
-  </div>
 </footer>
+

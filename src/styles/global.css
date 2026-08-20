@@ -1,5 +1,69 @@
 @import "tailwindcss";
 
+:root {
+  --accent: #0d6094;
+  --accent-light: #1580bc;
+  --accent-soft: rgba(13, 96, 148, 0.08);
+  --accent-glow: rgba(13, 96, 148, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
   font-family: 'IBM Plex Mono', monospace;
+  color: #1e293b;
+  background-color: #fcfdfd;
+  overflow-x: hidden;
 }
+
+::selection {
+  background: rgba(13, 96, 148, 0.2);
+  color: #0d6094;
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-card:hover {
+  border-color: rgba(13, 96, 148, 0.35);
+}
+
+/* Subtle background grid pattern */
+.bg-grid-subtle {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Subtle animated glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+

@@ -9,108 +9,283 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6"
 >
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
-      <li>
-        <a
-          href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
-        >
-          About
-        </a>
-      </li>
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Brand / Name Logo -->
+    <a
+      href="#"
+      class="group flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-nav hover:border-[var(--accent)]/50 transition-all shadow-xs"
+      style={`--accent: ${siteConfig.accentColor}`}
+    >
+      <span
+        class="w-7 h-7 rounded-full text-white text-xs font-bold flex items-center justify-center transition-transform group-hover:scale-105"
+        style={`background-color: ${siteConfig.accentColor}`}
+      >
+        JM
+      </span>
+      <span class="text-sm font-semibold text-slate-800 tracking-tight hidden sm:inline">
+        {siteConfig.name}
+      </span>
+    </a>
+
+    <!-- Desktop Floating Pill Navigation -->
+    <nav class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-nav shadow-sm">
+      <a
+        href="#about"
+        class="nav-link px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-full transition-all hover:bg-slate-100/70"
+      >
+        About
+      </a>
+      {
+        hasPapers && (
+          <a
+            href="#papers"
+            class="nav-link px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-full transition-all hover:bg-slate-100/70"
+          >
+            Papers
+          </a>
+        )
+      }
       {
         hasExperience && (
-          <li>
-            <a
-              href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
-          </li>
+          <a
+            href="#experience"
+            class="nav-link px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-full transition-all hover:bg-slate-100/70"
+          >
+            Experience
+          </a>
         )
       }
       {
         hasEducation && (
-          <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
-          </li>
-        )
-      }
-      {
-        hasPapers && (
-          <li>
-            <a
-              href="#papers"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Papers
-            </a>
-          </li>
+          <a
+            href="#education"
+            class="nav-link px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-full transition-all hover:bg-slate-100/70"
+          >
+            Education
+          </a>
         )
       }
       {
         hasProjects && (
-          <li>
-            <a
-              href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
+          <a
+            href="#projects"
+            class="nav-link px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-full transition-all hover:bg-slate-100/70"
+          >
+            Projects
+          </a>
         )
       }
-      <li class="relative group">
-        <button class="text-gray-700 hover:text-black transition-colors font-medium flex items-center gap-1 cursor-pointer">
-          Download CV
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m6 9 6 6 6-6"/>
+    </nav>
+
+    <!-- Right Action: Download CV & Mobile Menu Button -->
+    <div class="flex items-center gap-2">
+      <!-- CV Dropdown -->
+      <div class="relative group">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-white rounded-full transition-all duration-200 shadow-xs hover:shadow-md hover:brightness-110 cursor-pointer"
+          style={`background-color: ${siteConfig.accentColor}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+            <polyline points="7 11 12 16 17 11"></polyline>
+            <line x1="12" y1="4" x2="12" y2="16"></line>
+          </svg>
+          <span>CV / Resume</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-3 h-3 transition-transform group-hover:rotate-180"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6"></path>
           </svg>
         </button>
-        
-        <div class="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
-          <a 
-            href="/portfolio/Julien_MERAND_Resume.pdf" 
+
+        <div
+          class="absolute right-0 mt-2 w-44 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-1.5 z-50"
+        >
+          <div class="text-[10px] uppercase font-semibold text-slate-600 px-3 py-1 tracking-wider">
+            Download Version
+          </div>
+          <a
+            href="/portfolio/Julien_MERAND_Resume.pdf"
             target="_blank"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+            class="flex items-center justify-between px-3 py-2 text-xs text-slate-700 hover:text-[var(--accent)] hover:bg-slate-50 rounded-lg transition-colors"
+            style={`--accent: ${siteConfig.accentColor}`}
           >
-            English
+            <span class="flex items-center gap-2">
+              <span class="text-sm">🇬🇧</span> English Resume
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
-          <a 
-            href="/portfolio/Julien_MERAND_CV.pdf" 
+          <a
+            href="/portfolio/Julien_MERAND_CV.pdf"
             target="_blank"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+            class="flex items-center justify-between px-3 py-2 text-xs text-slate-700 hover:text-[var(--accent)] hover:bg-slate-50 rounded-lg transition-colors"
+            style={`--accent: ${siteConfig.accentColor}`}
           >
-            Français
+            <span class="flex items-center gap-2">
+              <span class="text-sm">🇫🇷</span> Français (CV)
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
-      </li>
-    </ul>
-  </nav>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        id="mobile-menu-btn"
+        aria-label="Toggle navigation menu"
+        class="md:hidden flex items-center justify-center w-8 h-8 rounded-full glass-nav text-slate-700 hover:text-slate-900 transition-colors"
+      >
+        <svg
+          id="menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg
+          id="close-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 hidden"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden max-w-6xl mx-auto mt-2 p-4 rounded-2xl glass-nav shadow-lg border border-slate-200/90 transition-all"
+  >
+    <div class="flex flex-col gap-2">
+      <a
+        href="#about"
+        class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 rounded-xl transition-colors"
+      >
+        About
+      </a>
+      {
+        hasPapers && (
+          <a
+            href="#papers"
+            class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 rounded-xl transition-colors"
+          >
+            Papers
+          </a>
+        )
+      }
+      {
+        hasExperience && (
+          <a
+            href="#experience"
+            class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 rounded-xl transition-colors"
+          >
+            Experience
+          </a>
+        )
+      }
+      {
+        hasEducation && (
+          <a
+            href="#education"
+            class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 rounded-xl transition-colors"
+          >
+            Education
+          </a>
+        )
+      }
+      {
+        hasProjects && (
+          <a
+            href="#projects"
+            class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 rounded-xl transition-colors"
+          >
+            Projects
+          </a>
+        )
+      }
+    </div>
+  </div>
 </header>
 
 <script>
-  window.addEventListener("scroll", () => {
-    const header = document.getElementById("header");
-    if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm", "shadow-sm");
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+  function toggleMenu() {
+    const isOpen = !mobileMenu?.classList.contains("hidden");
+    if (isOpen) {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
     } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm", "shadow-sm");
+      mobileMenu?.classList.remove("hidden");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+    }
+  }
+
+  mobileMenuBtn?.addEventListener("click", toggleMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    });
+  });
+
+  // Header background on scroll
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      header?.classList.add("py-2.5");
+      header?.classList.remove("py-4");
+    } else {
+      header?.classList.add("py-4");
+      header?.classList.remove("py-2.5");
     }
   });
 </script>
 
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
