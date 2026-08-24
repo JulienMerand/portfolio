@@ -106,7 +106,7 @@ export const siteConfig = {
       conference: "19th European Conference on Computer Vision (ECCV), 2026",
       conferenceSurname: "ECCV 2026",
       year: "2026",
-      citations: 0,
+      citations: 1,
       arxivId: "", // Add arXiv ID when published e.g. "2603.xxxx"
       doi: "",     // Add DOI when published
       link: "https://cea-list.github.io/cotograspweb/",
@@ -119,7 +119,7 @@ export const siteConfig = {
       conference: "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       conferenceSurname: "IROS 2026",
       year: "2026",
-      citations: 0,
+      citations: 1,
       arxivId: "", // Add arXiv ID when published e.g. "2605.xxxx"
       doi: "",     // Add DOI when published
       link: "https://cea-list.github.io/goagweb/",
@@ -132,7 +132,7 @@ export const siteConfig = {
       conference: "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
       conferenceSurname: "CASE 2025",
       year: "2025",
-      citations: 0,
+      citations: 1,
       arxivId: "2511.17276",
       doi: "10.1109/case58245.2025.11164060",
       link: "https://arxiv.org/abs/2511.17276",
