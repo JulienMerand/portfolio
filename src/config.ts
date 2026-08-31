@@ -10,7 +10,7 @@ export const siteConfig = {
     github: "https://github.com/JulienMerand",
   },
   aboutMe:
-    "As a 25-year-old PhD student at CEA-List and Paris-Saclay University, I specialize in the intersection of Artificial Intelligence and Robotics through dexterous manipulation of any objects using anthropomorphic robotic hands. My research aims to bridge the gap between high-level AI reasoning and low-level robotic control to achieve human-like grasping and manipulation. I combine a strong theoretical foundation with a hands-on commitment to shaping the future of intelligent robotics. Beyond my academic research, I am a big sports fan (runner, cyclist, black-belt judoka) and a guitarist.",
+    "As a 25-year-old PhD student at CEA-List and Paris-Saclay University, I specialize in the intersection of Artificial Intelligence and Robotics through dexterous manipulation using robotic hands. My research aims to bridge the gap between high-level AI reasoning and low-level robotic control to achieve grasping and manipulation. I combine a strong theoretical foundation with a hands-on commitment to shaping the future of intelligent robotics. Beyond my academic research, I am a big sports fan (runner, cyclist, black-belt judoka) and a guitarist.",
   skills: [
     "Python",
     "C/C++",
@@ -34,6 +34,7 @@ export const siteConfig = {
       image: "/portfolio/logo_cea.jpg",
       bullets: [
         "Researching Vision-Based Policy Learning for Dexterous Multi-Fingered Robotic Manipulation.",
+        "Supervised by Boris Meden (CEA), Liming Chen (Ecole Centrale de Lyon, CNRS) and Mathieu Grossard (CEA, Université Paris-Saclay)",
       ],
     },
     {
@@ -107,7 +108,7 @@ export const siteConfig = {
       conferenceSurname: "ECCV 2026",
       year: "2026",
       citations: 1,
-      arxivId: "", // Add arXiv ID when published e.g. "2603.xxxx"
+      arxivId: "2608.19776", // Add arXiv ID when published e.g. "2603.xxxx"
       doi: "",     // Add DOI when published
       link: "https://cea-list.github.io/cotograspweb/",
       abstract: "We propose CoToGrasp, a novel generative framework that synthesizes diverse, stable grasps strictly conditioned on specific contact topologies.",
@@ -120,7 +121,7 @@ export const siteConfig = {
       conferenceSurname: "IROS 2026",
       year: "2026",
       citations: 1,
-      arxivId: "", // Add arXiv ID when published e.g. "2605.xxxx"
+      arxivId: "2608.19759", // Add arXiv ID when published e.g. "2605.xxxx"
       doi: "",     // Add DOI when published
       link: "https://cea-list.github.io/goagweb/",
       abstract: "We propose GOAG, a novel deep generative model that learns a compact latent representation of a specific gripper's contact surface distribution, enabling the efficient sampling of valid grasp configurations without relying on object-specific training data.",
