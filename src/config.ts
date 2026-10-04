@@ -54,7 +54,7 @@ export const siteConfig = {
       image: "/portfolio/logo_ArcelorMittal.jpg",
       bullets: [
         "Developed an autonomous solution to improve traceability and inventory of steel coils.",
-        "Studied optimizations saving nearly 7680 hours of manual work per year.",
+        "Studied optimizations saving nearly 7680 hours of manual work per year (~50 man-months).",
         "Conducted technology watch and benchmarking for mobile and quadruped robotics.",
       ],
     },
