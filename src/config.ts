@@ -3,6 +3,8 @@ export const siteConfig = {
   title: "PhD Student in Robotics & AI @ CEA-List",
   description: "Portfolio of Julien Mérand, a PhD student specializing in Robotic Grasping, Dexterous Manipulation, and AI at CEA-List and Paris-Saclay University.",
   accentColor: "#0d6094",
+  // GoatCounter code for visitor analytics (dashboard: https://<code>.goatcounter.com). Remove to disable.
+  goatcounter: "julienmerand",
   social: {
     email: "julien.merand@cea.fr",
     linkedin: "https://www.linkedin.com/in/julien-merand/",
